@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vikrant Singh Fixer</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '799319162947149');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=799319162947149&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+background:linear-gradient(130deg,#2b0000,#550000,#900000);
+background-size:300% 300%;
+animation:bgMove 10s infinite alternate;
+color:white;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+100%{background-position:100% 50%;}
+}
+
+/* particles */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:0;
+}
+
+/* card */
+
+.wrapper{
+position:relative;
+z-index:2;
+text-align:center;
+}
+
+.card{
+width:340px;
+padding:40px 30px;
+border-radius:20px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.2);
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
+}
+
+.profile{
+width:110px;
+height:110px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid white;
+margin-bottom:15px;
+}
+
+h2{
+margin-bottom:10px;
+}
+
+.text{
+font-size:14px;
+line-height:1.6;
+opacity:0.9;
+margin-bottom:25px;
+}
+
+/* button */
+
+.btn{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:15px 30px;
+border-radius:50px;
+background:linear-gradient(45deg,#00c6ff,#0072ff);
+color:white;
+text-decoration:none;
+font-weight:bold;
+font-size:16px;
+transition:.3s;
+position:relative;
+}
+
+.btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 25px #00c6ff;
+}
+
+/* floating bubbles */
+
+.btn::before,
+.btn::after{
+content:"";
+position:absolute;
+width:10px;
+height:10px;
+background:#00c6ff;
+border-radius:50%;
+top:-15px;
+animation:bubble 3s infinite;
+}
+
+.btn::after{
+left:80%;
+animation-delay:1s;
+}
+
+.btn::before{
+left:20%;
+}
+
+@keyframes bubble{
+0%{transform:translateY(0);opacity:1}
+100%{transform:translateY(-40px);opacity:0}
+}
+
+/* countdown */
+
+.timer{
+margin-top:15px;
+font-size:13px;
+opacity:0.8;
+}
+
+/* disclaimer */
+
+.disclaimer{
+margin-top:20px;
+font-size:11px;
+opacity:0.6;
+}
+
+.ads{
+margin-top:6px;
+font-size:12px;
+}
+
+.ads a{
+color:#00c6ff;
+font-weight:bold;
+text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<div class="wrapper">
+
+<div class="card">
+
+<img src="p.jpg" class="profile">
+
+<h2>👑Vikrant Singh Fixer👑</h2>
+
+<div class="text">
+🔥 I AM CRICKET ANALYST 🔥<br>
+⚡️ 47/45 IPL Match Pass 2026 ⚡️<br>
+💰 MAUKA HAI CRORO KAMANE KA 💰
+</div>
+
+<a class="btn" href="https://t.me/+Un47Lu9mRckwZDY1" target="_blank">
+<i class="fab fa-telegram"></i>
+Join Now Free
+<i class="fab fa-telegram"></i>
+</a>
+
+<div class="timer">
+Redirecting in <span id="count">30</span> seconds...
+</div>
+
+</div>
+
+<div class="disclaimer">
+This channel is for educational and informational purposes only.
+</div>
+
+<div class="ads">
+Ads Managed by <a href="https://t.me/+LiETHEERYtgzNjU1" target="_blank">APEagency</a>
+</div>
+
+</div>
+
+<script>
+
+/* countdown */
+
+let time=30;
+let counter=document.getElementById("count");
+
+setInterval(()=>{
+time--;
+counter.innerText=time;
+if(time<=0){
+window.location.href="https://t.me/+Un47Lu9mRckwZDY1";
+}
+},1000);
+
+/* particles */
+
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<80;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2+1,
+d:Math.random()*80
+});
+}
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="rgba(255,255,255,0.4)";
+
+particles.forEach(p=>{
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fill();
+});
+
+update();
+}
+
+function update(){
+particles.forEach(p=>{
+p.y+=0.5;
+
+if(p.y>canvas.height){
+p.y=0;
+p.x=Math.random()*canvas.width;
+}
+});
+}
+
+setInterval(draw,33);
+
+</script>
+
+</body>
+</html>
